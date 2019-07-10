@@ -12,60 +12,26 @@
 </div>
 <div class="main">
     <div class="menu">
-        <div class="sorting">
-            <h3>Sorting</h3>
-                <select class="sort">
-                     <option value = "By default">By default</option>
-                     <option value = "Recent">Recent</option>
-                     <option value = "Oldest">Oldest</option>
-                </select>
-        </div>
-        <div class="filtering">
-            <button class="filter">Bussiness</button>
-            <button class="filter">Politics</button>
-            <button class="filter">Sports</button>
-            <button class="filter">Food</button>
-            <button class="filter">Culture</button>
-            <button class="filter">Tech</button>
-            <button class="filter">Showbiz</button>
-       <!-- <ul>
-            <li>
-        <label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span> 
-</label><span class="text">Bussiness</span>
-            </li>
-            <li>
-        <label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>Politics</li>
-<li>
-        <label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label><span>Sports</span></li>
-<li>
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>Food</li>
-<li>
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>Tech</li>
-<li>
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>Culture</li>
-<li>
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>Showbiz</li>-->
-    </div>
+        <div id="sorting">
+           <!-- <h3>Sorting</h3><--></-->
+            <button id="by_default" class="sort active">By default</button>
+            <button id="Oldest" class="sort">Newest</button>
+            <button id="Current" class="sort">Oldest</button>
+            
+          </div>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("sorting");
+var btns = header.getElementsByClassName("sort");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
     </div>
       <div class="content">
         <div id="cont">

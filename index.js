@@ -42,6 +42,7 @@ fetch(url)
                 posttags.setAttribute("class", "tags");
                 dt = new Date(createdAt);
                 postdate.innerHTML = dt.toLocaleString();
+                article.setAttribute("data-Date", createdAt)
                 //article.setAttribute("class", "article");
                 
                 //append element
@@ -60,6 +61,7 @@ fetch(url)
             for (i = 0; i < elArr.length; ++i)
             {
                 article = elArr[i];
+                article.setAttribute("data-index", i.toString());  
                 if (i < 10)
                 {
                     article.setAttribute("class", "article");
@@ -77,6 +79,68 @@ fetch(url)
         console.log(JSON.stringify(error));
     });
 
+
+
+
+function by_default(){
+var p = document.getElementById('cont');
+Array.from(p.children)
+  .map(function (x) { return p.removeChild(x); })
+  .sort(function (x, y) {
+      d1 = parseInt(x.getAttribute("data-index"));
+      d2 = parseInt(y.getAttribute("data-index"));
+       return d1 - d2;
+  })
+  .forEach(function (x) { p.appendChild(x); });
+}
+
+function sort_by_date_asc(){
+var p = document.getElementById('cont');
+Array.from(p.children)
+  .map(function (x) { return p.removeChild(x); })
+  .sort(function (x, y) {
+      d1 = x.getAttribute("data-Date");
+      d2 = y.getAttribute("data-Date");
+       return d1.localeCompare(d2) ;
+  })
+  .forEach(function (x) { p.appendChild(x); });
+
+}
+
+function sort_by_date_desc(){
+var p = document.getElementById('cont');
+Array.from(p.children)
+  .map(function (x) { return p.removeChild(x); })
+  .sort(function (x, y) {
+      d1 = x.getAttribute("data-Date");
+      d2 = y.getAttribute("data-Date");
+       return d2.localeCompare(d1) ;
+  })
+  .forEach(function (x) { p.appendChild(x); });
+
+}
+
+function restoreVis(){
+    var p = document.getElementById('cont');
+    var c = Array.from(p.children);
+    var a = 0;
+    for (var i=0; i<c.length; ++i)
+    {
+        a += c[i].className == "article"
+    }
+    for (var i=0; i<c.length; ++i)
+    {
+        if (i < a)
+        {
+            c[i].className = "article";
+        }
+        else
+        {
+            c[i].className = "hiddenarticle";
+        }
+    }
+}
+
 window.onscroll = (function() {
    if(window.scrollY + window.innerHeight >= document.body.clientHeight) {
        var list = document.getElementsByClassName("hiddenarticle");
@@ -86,11 +150,13 @@ window.onscroll = (function() {
        list.forEach(function(element) {
            element.setAttribute("class", "article");
        });
-       
    }
 });
 
-   document.getElementById("reset").onclick = function (){
+
+
+
+document.getElementById("reset").onclick = function (){
        window.scrollTo(0, 0);
        list = Array.from(document.getElementsByClassName("article"));
        for (i = 10; i < list.length; ++i)
@@ -99,34 +165,8 @@ window.onscroll = (function() {
        }
    
    }
-/*
 
-
-var date_sort_asc = function (date1, date2) {
-  // This is a comparison function that will result in dates being sorted in
-  // ASCENDING order. As you can see, JavaScript's native comparison operators
-  // can be used to compare dates. This was news to me.
-  if (date1 > date2) return 1;
-  if (date1 < date2) return -1;
-  return 0;
-};
-
-var date_sort_desc = function (date1, date2) {
-  // This is a comparison function that will result in dates being sorted in
-  // DESCENDING order.
-  if (date1 > date2) return -1;
-  if (date1 < date2) return 1;
-  return 0;
-};
-
-
-.sort(date_sort_asc);
-for (var i = 0; i < postdate.length; i++){
-
-}
-
-article.sort(date_sort_desc);
-for (var i = 0; i < postdate.length; i++) {
-  
-}
-*/
+ 
+document.getElementById("Oldest").onclick = function() {sort_by_date_desc();restoreVis();}
+document.getElementById("Current").onclick = function() {sort_by_date_asc();restoreVis();}
+document.getElementById("by_default").onclick = function() { by_default();restoreVis();}

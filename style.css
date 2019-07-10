@@ -10,6 +10,9 @@ body {
 .header{
 width: 100%;
 }
+.header h1 {
+  text-align: center;
+}
 .main{
   width:100%;
   margin: auto;
@@ -29,24 +32,34 @@ width: 100%;
   color: #f9ffff;
   }
 
-.sorting{
-  padding-left: 20px;
-  font-size: 20px;
+#sorting{
+  display:flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+
 }
-.filter {
- float: left;
- display: block;
+
+#filtering {
+  display:flex;
+  flex-flow: column wrap;
+  padding: 20px 30px;
+  justify-content: flex-start;
 }
-/*.menu li{
-    display: block;
-    color: #f9ffff;
-    text-align: left;
-    text-decoration: none;
-    list-style: none outside none;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-}*/
+.sort, .filter{
+ /* border:none;*/
+  background-color: #f9ffff;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+}
+.sort:hover, .filter:hover {
+  background-color: #0072e9;
+  color: white;
+}
+.active {
+  background-color: #0042ab;
+  color: white;
+}
 
 .content{
   width: 70%;
@@ -60,7 +73,8 @@ width: 100%;
 }
 .article {
   display: block;
-  height: 300px;
+  position: relative;
+  height: 100%;
   margin: 10px;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
