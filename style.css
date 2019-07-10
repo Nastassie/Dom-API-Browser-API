@@ -18,23 +18,38 @@ width: 100%;
   background-color: 	#f9ffff;
 }
 .menu{
-  width: 15%;
+  width: 30%;
   float: left;
-  display: table-cell;
   height: 100%;
   background-color: #0042ab;
   display:flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: flex-start;
   padding-bottom: 99999px; margin-bottom: -99999px;
   color: #f9ffff;
-  
+  }
+
+.sorting{
+  padding-left: 20px;
+  font-size: 20px;
 }
-.menu p{
-  padding: 30px;
+.filter {
+ float: left;
+ display: block;
 }
+/*.menu li{
+    display: block;
+    color: #f9ffff;
+    text-align: left;
+    text-decoration: none;
+    list-style: none outside none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}*/
+
 .content{
-  width: 85%;
+  width: 70%;
   float: left;
   display: table-cell;
   height: 100%;
@@ -44,19 +59,42 @@ width: 100%;
   display: block;
 }
 .article {
-  height: 250px;
+  display: block;
+  height: 300px;
   margin: 10px;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.hiddenarticle {
+  display: none;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  visibility: hidden;
+}
+.removedarticle {
+  display: none;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  visibility: hidden;
+}
+.delete{
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background-color: red;
 }
 h1{
   text-align: center;
 }
 img {
   float: left;
+  display: block;
   padding-right: 20px;
 }
 .description {
+  display: block;
   color: #070010;
 }
 .pdate {
@@ -66,3 +104,77 @@ img {
 .tags{
   color: darkred;
 }
+#reset {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background-color: green;
+  background-image: url('https://chuckgreaves.com/wp-content/uploads/2011/10/refresh.png');
+  background-repeat:no-repeat;
+}
+#reset:before{
+  border-radius: 50%; 
+}
+/*.switch {
+  position: relative;
+   
+  display: block;
+  width: 30px;
+  height: 17px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 0px;
+  bottom: 0px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}*/
+
+/* Rounded sliders */
+/*.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}*/
