@@ -128,11 +128,15 @@ function restoreVis(){
     {
         a += c[i].className == "article"
     }
+    var aa = 0;
     for (var i=0; i<c.length; ++i)
     {
-        if (i < a)
+        if (c[i].className == "removedarticle")
+            continue;
+        if (aa < a)
         {
             c[i].className = "article";
+            ++aa;
         }
         else
         {
