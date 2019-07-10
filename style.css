@@ -13,6 +13,7 @@ width: 100%;
 .header h1 {
   text-align: center;
 }
+
 .main{
   width:100%;
   margin: auto;
@@ -21,7 +22,7 @@ width: 100%;
   background-color: 	#f9ffff;
 }
 .menu{
-  width: 30%;
+  width: 20%;
   float: left;
   height: 100%;
   background-color: #0042ab;
@@ -62,7 +63,7 @@ width: 100%;
 }
 
 .content{
-  width: 70%;
+  width: 80%;
   float: left;
   display: table-cell;
   height: 100%;
@@ -99,17 +100,21 @@ width: 100%;
   border-radius: 15px;
   background-color: red;
 }
-h1{
+.article h1{
   text-align: center;
+  padding-left: 150px;
 }
-img {
+.article img {
   float: left;
   display: block;
   padding-right: 20px;
+  position: absolute;
+  top: 45px;
 }
 .description {
   display: block;
   color: #070010;
+  padding-left: 150px;
 }
 .pdate {
   float: right;
@@ -117,6 +122,7 @@ img {
 }
 .tags{
   color: darkred;
+  padding-left: 150px;
 }
 #reset {
   position: fixed;
