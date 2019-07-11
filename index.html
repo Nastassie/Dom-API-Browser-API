@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Blog</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
+
 <body>
-<div class="header">
-    <h1>Blog</h1>
-</div>
-<div class="main">
-    <div class="menu">
-        <div id="sorting">
-           <!-- <h3>Sorting</h3><--></-->
-            <button id="by_default" class="sort active">By default</button>
-            <button id="Oldest" class="sort">Newest</button>
-            <button id="Current" class="sort">Oldest</button>
-            
-          </div>
-
-<script>
-// Add active class to the current button (highlight it)
-var header = document.getElementById("sorting");
-var btns = header.getElementsByClassName("sort");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
-  });
-}
-</script>
+    <div class="header">
+        <h1>Blog</h1>
     </div>
-      <div class="content">
-        <div id="cont">
-            
-        </div>    
-    </div>  
-</div>
-<button id="reset"></button>
-</div>
+    <div class="main">
+        <div class="menu">
+            <div id="sorting">
 
-<script src="./index.js"></script>
+                <button id="by_default" class="sort active">By default</button>
+                <button id="Oldest" class="sort">Newest</button>
+                <button id="Current" class="sort">Oldest</button>
+
+            </div>
+
+            <script>
+                // Add active class to the current button (highlight it)
+                var header = document.getElementById("sorting");
+                var btns = header.getElementsByClassName("sort");
+                for (var i = 0; i < btns.length; i++) {
+                  btns[i].addEventListener("click", function() {
+                  var current = document.getElementsByClassName("active");
+                  current[0].className = current[0].className.replace(" active", "");
+                  this.className += " active";
+                  });
+                }
+            </script>
+        </div>
+        <div class="content">
+            <div id="cont">
+
+            </div>
+        </div>
+    </div>
+    <button id="reset"></button>
+    </div>
+
+    <script src="./index.js"></script>
 </body>
+
 </html>

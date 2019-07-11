@@ -7,7 +7,7 @@ function removeArticle(elem){
     if (elements.length)
         elements[0].setAttribute("class", "article");
 }
-//const itemdate = document.getElementById('pdate');
+
 fetch(url)
     .then(res => res.json())
     .then(data => {
@@ -29,11 +29,10 @@ fetch(url)
                 posttags = document.createElement('p');
                 postimg = document.createElement('img');
                 postdate = document.createElement("p");
-                //post.setAttribute('class', 'post_class')
+                
                 postdiv.innerHTML = description;
                 posttitle.innerHTML = title;
                 posttags.innerHTML = tags.join(", ");
-                //print(tags.split(","));
                 postdiv.setAttribute("class", "description");
                 postimg.setAttribute("src", img);
                 postimg.setAttribute("height", "150px");
@@ -43,8 +42,7 @@ fetch(url)
                 dt = new Date(createdAt);
                 postdate.innerHTML = dt.toLocaleString();
                 article.setAttribute("data-Date", createdAt)
-                //article.setAttribute("class", "article");
-                
+                                
                 //append element
                 article.appendChild(button_r);
                 article.appendChild(posttitle);
@@ -52,8 +50,7 @@ fetch(url)
                 article.appendChild(postdiv);
                 article.appendChild(postdate);
                 article.appendChild(posttags);
-                //article.style.visibility = "hidden";
-                //container.appendChild(article);
+               
                 return article;
         });
     })
@@ -74,7 +71,7 @@ fetch(url)
             }
         }
     )
-    //.then(arr => (arr))
+    
     .catch((error) => {
         console.log(JSON.stringify(error));
     });
